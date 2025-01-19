@@ -1,10 +1,10 @@
 <script>
     import EventService from '@/services/EventService.js'
     export default {
+        props: ['id'],
         data() {
             return {
                 event: Object,
-                id: 123
             }
         },
         created() {
@@ -25,7 +25,7 @@
 <template>
     <div class="event-card">
         <h1>{{ event.title }}</h1> 
-        <p>{{ event.time }} on {{ event?.date }} @ {{ event?.location }}</p>
+        <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
         <p>{{ event.description }}</p>
     </div>
 </template>
@@ -42,8 +42,10 @@
         cursor: pointer; 
         margin-bottom: 18px;
     }
-    .event-card:hover {
-        transform: scale(1.15);
-        box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+    h1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 </style>

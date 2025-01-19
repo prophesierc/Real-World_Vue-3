@@ -5,8 +5,8 @@
     <div class="wrapper">
       
       <nav>
-        <RouterLink to="/">Events</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink :to="{ name: 'events' }">Events</RouterLink>
+        <RouterLink :to="{ name: 'about' }">About</RouterLink>
       </nav>
       
     </div>

@@ -1,5 +1,7 @@
 <template>
-    <RouterLink to="/event/123">
+    <RouterLink 
+        :to="{ name: 'eventdetails', params: { id: event.id }}"
+    >
         <div class="event-card">
             <span>@ {{ event.time }} on {{ event.date }} </span>
             <h4>{{ event.title }}</h4>
@@ -11,7 +13,10 @@
     export default {
         name: 'EventCard',
         props: {
-            event: Object, 
+            event: {
+                type: Object,
+                required: true
+            }
         }
     }
 </script>

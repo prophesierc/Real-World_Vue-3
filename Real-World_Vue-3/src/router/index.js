@@ -4,7 +4,7 @@ import EventView from '@/views/EventView.vue'
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'events',
     component: EventView,
   },
   {
@@ -16,8 +16,9 @@ const routes = [
     component: () => import('@/views/AboutView.vue'),
   },
   {
-    path: '/event/123',
-    name: 'EventDetails',
+    path: '/event/:id',
+    name: 'eventdetails',
+    props: true,
     component: () => import('@/views/EventDetails.vue'),
   }
 ]
